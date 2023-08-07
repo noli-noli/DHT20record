@@ -1,0 +1,13 @@
+[Unit]
+Description=DHT20_recoad service
+#After=network.target local-fs.target
+After=dev-snd-controlC1.device
+
+[Service]
+Type=simple
+WorkingDirectory=/home/pi/DHT20record
+ExecStart=/usr/bin/python3 temperature_recoad_v1.1.py
+#ExecStart=/usr/bin/sh recoad-start.sh
+
+[Install]
+WantedBy=multi-user.target
